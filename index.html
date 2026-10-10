@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#171713">
+  <title>Happy Birthday, Anis Chacha!</title>
+  <style>
+    :root { --gold: #e5c778; --cream: #fff5df; --muted: #d8cfbd; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100vh; padding: 24px 14px;
+      display: grid; place-items: center; text-align: center;
+      color: var(--cream); font-family: Georgia, 'Times New Roman', serif;
+      background: radial-gradient(ellipse at top, #343023 0%, #1b1b17 46%, #10100e 100%);
+      overflow-x: hidden;
+    }
+    .sparkles { position: fixed; inset: 0; pointer-events: none; overflow: hidden; }
+    .sparkles span { position: absolute; color: var(--gold); opacity: .55; animation: twinkle 3s ease-in-out infinite; }
+    .sparkles span:nth-child(1) { top: 12%; left: 12%; font-size: 22px; }
+    .sparkles span:nth-child(2) { top: 22%; right: 13%; font-size: 16px; animation-delay: .8s; }
+    .sparkles span:nth-child(3) { bottom: 18%; left: 18%; font-size: 18px; animation-delay: 1.2s; }
+    .sparkles span:nth-child(4) { bottom: 12%; right: 12%; font-size: 24px; animation-delay: .4s; }
+    .card {
+      position: relative; width: min(100%, 650px); padding: clamp(28px, 6vw, 52px) clamp(18px, 5vw, 44px);
+      border: 1px solid #b89b58; border-radius: 22px;
+      background: linear-gradient(145deg, rgba(42,40,32,.97), rgba(22,22,18,.98));
+      box-shadow: 0 22px 70px #0008, inset 0 0 28px #e5c77808;
+    }
+    .eyebrow { color: var(--gold); letter-spacing: .22em; text-transform: uppercase; font-size: 11px; }
+    .ornament { color: var(--gold); letter-spacing: .45em; margin: 18px 0; }
+    h1 { color: var(--gold); font-size: clamp(36px, 8vw, 58px); line-height: 1.08; font-weight: normal; margin: 18px 0 10px; }
+    h2 { color: var(--gold); font-weight: normal; font-size: clamp(23px, 5vw, 30px); margin: 10px 0; }
+    .intro, .message { color: var(--muted); font-size: clamp(16px, 3.7vw, 18px); line-height: 1.9; }
+    .cake { font-size: 70px; margin: 22px 0; filter: drop-shadow(0 6px 15px #e5c77820); animation: float 3s ease-in-out infinite; }
+    button { margin-top: 16px; padding: 14px 23px; border: 1px solid #f1d995; border-radius: 7px; background: var(--gold); color: #1b1912; font-size: 15px; font-weight: bold; cursor: pointer; transition: transform .2s, background .2s; }
+    button:hover { background: #f5dfa0; transform: translateY(-2px); }
+    button:focus-visible { outline: 3px solid white; outline-offset: 4px; }
+    #surprise { display: none; margin-top: 28px; padding-top: 24px; border-top: 1px solid #b89b58; animation: appear .8s ease both; }
+    #surprise.show { display: block; }
+    .dua { color: #f0dfb5; }
+    .signature { margin-top: 24px; color: var(--gold); font-style: italic; }
+    footer { color: #a9a18f; font: 12px Arial, sans-serif; margin-top: 28px; }
+    .confetti { position: fixed; top: -15px; width: 7px; height: 12px; pointer-events: none; animation: fall 3.2s linear forwards; z-index: 5; }
+    @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+    @keyframes twinkle { 0%,100% { opacity: .25; transform: scale(.8); } 50% { opacity: .9; transform: scale(1.15); } }
+    @keyframes appear { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fall { to { transform: translateY(110vh) rotate(540deg); opacity: .15; } }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+  </style>
+</head>
+<body>
+  <div class="sparkles" aria-hidden="true"><span>✦</span><span>✧</span><span>✦</span><span>✧</span></div>
+  <main class="card">
+    <div class="eyebrow">A little celebration, made with love</div>
+    <div class="ornament" aria-hidden="true">✦ ─── ✦ ─── ✦</div>
+    <h1>Happy Birthday</h1>
+    <h2>Anis Chacha 🤍</h2>
+    <div class="cake" aria-hidden="true">🎂</div>
+    <p class="intro">Today, we celebrate someone truly special. Chacha, your place in our family is precious, and today is a lovely chance to remind you how much you are appreciated.</p>
+    <button id="surpriseButton" type="button" onclick="openSurprise()">Open Your Surprise ✨</button>
+    <section id="surprise" aria-live="polite">
+      <h2>Dear Anis Chacha,</h2>
+      <p class="message">Dear Anis Chacha, on your birthday, I just want to send you lots of love and heartfelt wishes. May the year ahead bring you peaceful days, reasons to smile, success in everything good you pursue, and countless beautiful moments with the people who care about you. You deserve to feel loved and appreciated today and always.</p>
+      <p class="message dua">May Allah grant you a long life filled with good health, peace, and happiness. May He accept your duas, ease every hardship, guide you towards what is best, protect you and your loved ones, and place endless barakah in your life and home. May your heart always find comfort in His mercy. Ameen, ya Rabb. 🤲</p>
+      <div class="ornament" aria-hidden="true">✦ ❋ ✦ ❋ ✦</div>
+      <h2>With Love and Respect 💛</h2>
+      <p class="message">May this new year of your life be your happiest one yet. You are loved, respected, and appreciated more than words can say. Happy Birthday, Anis Chacha! 🎂</p>
+      <p class="signature">With lots of love, Tasmia 🤍</p>
+    </section>
+    <footer>A small birthday surprise, made with love.</footer>
+  </main>
+  <script>
+    function openSurprise() {
+      document.getElementById('surprise').classList.add('show');
+      document.getElementById('surpriseButton').textContent = 'Surprise Opened 💛';
+      document.getElementById('surpriseButton').disabled = true;
+      for (let i = 0; i < 42; i++) {
+        const piece = document.createElement('span');
+        piece.className = 'confetti';
+        piece.style.left = Math.random() * 100 + 'vw';
+        piece.style.backgroundColor = ['#e5c778', '#fff5df', '#b89b58'][i % 3];
+        piece.style.animationDelay = (Math.random() * 1.1) + 's';
+        document.body.appendChild(piece);
+        setTimeout(() => piece.remove(), 4500);
+      }
+    }
+  </script>
+</body>
+</html>
